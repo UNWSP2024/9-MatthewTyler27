@@ -1,23 +1,21 @@
 #Matthew Tyler
 #10/31/25
-#Total Numnber
+#Average Numbers
 
-import random
+def sum_numbers_from_file():
+    try:
+        total = 0
+        with open("numbers.txt", "r") as file:
+            for number in file:
+                try:
+                    integer = int(number.strip())
+                    total += integer
+                except ValueError:
+                    print("One of the numbers was not a valid number")
+        print("The total is:",total)
+    except IOError:
+        print("Something Went Wrong")
 
-def random_numbers():
-    while True:
-        count = int(input("How many random numbers would you like(1-1000)?"))
-        if count < 0 or count > 1000:
-            print("Please enter a valid number")
-        else:
-            break
-    
-    with open("random_number.txt", "w") as file:
-        for i in range(count):
-            numbers = random.randint(1, 500)
-            file.write(str(numbers)+"\n")
-            
-            
-
+# You don't need to change anything below this line:
 if __name__ == '__main__':
-    random_numbers()
+    sum_numbers_from_file()
