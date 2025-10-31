@@ -1,6 +1,6 @@
 #Matthew Tyler
 #10/31/25
-#Total Numnber
+#Random Numbers
 
 import random
 
