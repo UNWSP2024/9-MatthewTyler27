@@ -1,19 +1,23 @@
-# Program #3: Average Numbers
-# Assume a file containing a series of integers is named numbers.txt and exists on the computer's disk.
-# (please use the provided numbers.txt)
-# Write a program that reads all of the numbers stored in the file and calculates their total.  
+#Matthew Tyler
+#10/31/25
+#Total Numnber
 
-# The program should handle the following exceptions: 
+import random
 
-# It should handle any IOError exceptions that are raised.
-# It should handle any ValueError exceptions that are raised when the items that are read from the file 
-# are converted to a number.
-def sum_numbers_from_file():
-    ######################
-    # Add your code here #
-    ######################
-    print('In the sum_numbers_from_file function')
+def random_numbers():
+    while True:
+        count = int(input("How many random numbers would you like(1-1000)?"))
+        if count < 0 or count > 1000:
+            print("Please enter a valid number")
+        else:
+            break
+    
+    with open("random_number.txt", "w") as file:
+        for i in range(count):
+            numbers = random.randint(1, 500)
+            file.write(str(numbers)+"\n")
+            
+            
 
-# You don't need to change anything below this line:
 if __name__ == '__main__':
-    sum_numbers_from_file()
+    random_numbers()
